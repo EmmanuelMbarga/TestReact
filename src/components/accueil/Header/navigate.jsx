@@ -88,7 +88,7 @@ export default function Navigate() {
         </div>
       )}
       {openCategories && (
-        <div className="fixed bg-black backdrop-blur-sm bg-opacity-40  max-w-[1700px] left-0 right-0 top-0  m-auto   h-full"></div>
+        <div className="fixed z-20 bg-black backdrop-blur-sm bg-opacity-40  max-w-[1700px] left-0 right-0 top-0  m-auto   h-full"></div>
       )}
     </>
   );
@@ -109,16 +109,11 @@ const Categories = () => {
   });
   if (isLoading) {
     return (
-      // <p className="text-center mt-40 text-2xl text-gray-400 font-inter">
-      //   loading...
-      // </p>
-
-        <img
-          src="https://i.gifer.com/ZKZg.gif"
-          alt="loading"
-          className="w-10 h-10 m-auto mt-40"
-        />
-
+      <img
+        src="https://i.gifer.com/ZKZg.gif"
+        alt="loading"
+        className="w-10 h-10 m-auto mt-40"
+      />
     );
   }
   if (isError) {
@@ -131,6 +126,7 @@ const Categories = () => {
     );
   }
 
+  
   return (
     <>
       {Categorie?.data.map((categories) => (
