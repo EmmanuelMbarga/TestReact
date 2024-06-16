@@ -5,3 +5,26 @@
 body{
     @apply p-0 m-0 box-border font-Poppins
 }
+
+.containerCardsPhone{
+    @apply m-auto mt-4 rounded-md hover:shadow-md cursor-pointer hover:shadow-yellow-800 mobil:shadow-md mobil:hover:shadow
+}
+
+/* -------------------------------------------style Formulaire Inscription------------------------------------------- */
+.labetStyle{
+    @apply text-xs font-bold font-inter
+}
+.inputStyle{
+    @apply border justify-center bg-white w-full Tablette:w-full my-1 px-4 text-base font-inter outline-offset-1 outline-yellow-400
+}
+.errorStyle{
+    @apply text-xs text-red-500 font-inter
+}
+
+/* --------------------------------------------------style elements pannier-------------------------------------------------- */
+.element{
+    @apply capitalize font-inter text-sm font-bold Tablette:text-xs Laptop:text-xs
+}
+.souselement{
+    @apply font-light
+}

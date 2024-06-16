@@ -47,16 +47,16 @@ export default function Navigate() {
     <>
       <nav>
         <ul className="flex items-center justify-evenly bg-black text-white mobil:text-xs MiniPortable:text-xs ">
-          <li>zara</li>
-          <li>Tenues de Sortie</li>
+          <li className="MiniPortable:text-[5px]">zara</li>
+          <li className="MiniPortable:text-[5px]">Tenues de Sortie</li>
           <li>
             <ul onClick={handlerCliked} className="cursor-pointer">
-              <li className="flex items-center">
+              <li className="flex items-center MiniPortable:text-[5px]">
                 categories<span onClick={handlerCliked}>{chevronR}</span>
               </li>
             </ul>
           </li>
-          <li>autres</li>
+          <li className="MiniPortable:text-[5px]">autres</li>
           <button className=" absolute invisible Laptop:hidden Tablette:hidden ml-2 mobil:visible mobil:relative MiniPortable:visible MiniPortable:relative">
             {iconSearch}
           </button>
@@ -68,24 +68,28 @@ export default function Navigate() {
 
       {/* ------------------------------------------------------------------Section Categorie------------------------------------------------------------------ */}
       {openCategories && (
-        <div className="-mt-8 relative  flex justify-center p-4 ">
-          <div className="w-[50%] absolute bg-white shadow-xl z-50 p-4 rounded-lg">
-            <button
-              onClick={handlerCliked}
-              className="border w-8 h-8 flex justify-center items-center cursor-pointer bg-red-500 rounded-full"
-            >
-              x
-            </button>
-            <h2 className="text-center text-2xl pb-10 MiniPortable:text-xs MiniPortable:py-5 mobil:py-6 ">
-              categories
-            </h2>
-            <div>
-              <div className=" overflow-y-scroll h-[380px]">
-                <Categories />
+        <div className="-mt-8 relative flex justify-center p-4 ">
+          <div className="fixed z-50 w-[50%]">
+            {" "}
+            <div className="w-[90%] absolute bg-white shadow-xl z-50 p-4 rounded-lg">
+              <button
+                onClick={handlerCliked}
+                className="border w-8 h-8 flex justify-center items-center cursor-pointer bg-red-500 rounded-full"
+              >
+                x
+              </button>
+              <h2 className="text-center text-2xl pb-10 MiniPortable:text-xs MiniPortable:py-5 mobil:py-6  ">
+                categories
+              </h2>
+              <div>
+                <div className=" overflow-y-scroll h-[380px]">
+                  <Categories />
+                </div>
               </div>
             </div>
           </div>
         </div>
+
       )}
       {openCategories && (
         <div className="fixed z-20 bg-black backdrop-blur-sm bg-opacity-40  max-w-[1700px] left-0 right-0 top-0  m-auto   h-full"></div>
@@ -126,7 +130,6 @@ const Categories = () => {
     );
   }
 
-  
   return (
     <>
       {Categorie?.data.map((categories) => (
