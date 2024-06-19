@@ -56,7 +56,7 @@ export default function SectionProduct() {
             <>
               <div className="containerCardsPhone">
                 <div key={produit.id}>
-                  <div className="flex justify-center bg-white">
+                  <div className="flex justify-center bg-white" key={produit.id}>
                     <img
                       key={produit.id}
                       src={produit.thumbnail}

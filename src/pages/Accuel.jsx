@@ -7,7 +7,7 @@ export default function PageAccuel() {
     <>
       <Hearder />
       <SectionProduct />
-      <FooterApp/>
+      <FooterApp />
     </>
   );
 }

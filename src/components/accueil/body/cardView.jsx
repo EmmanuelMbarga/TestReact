@@ -74,7 +74,6 @@ const CartItems = ({ item }) => {
     dispatch(pannierCartActions.decrementQuandity(item.id))
   }
 
-  console.log(item);
   return (
     <div>
       <div>

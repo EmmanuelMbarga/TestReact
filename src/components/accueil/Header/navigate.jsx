@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const iconSearch = (
   <svg
@@ -46,9 +47,13 @@ export default function Navigate() {
   return (
     <>
       <nav>
-        <ul className="flex items-center justify-evenly bg-black text-white mobil:text-xs MiniPortable:text-xs ">
-          <li className="MiniPortable:text-[5px]">zara</li>
-          <li className="MiniPortable:text-[5px]">Tenues de Sortie</li>
+        <ul className="flex items-center justify-evenly bg-black text-white mobil:text-xs MiniPortable:text-xs Tablette:bg-yellow-700">
+          <Link to={"/"}>
+            <li className="MiniPortable:text-[5px]">Accueil</li>
+          </Link>
+          <Link to={"/Articles/shopiline"}>
+            <li className="MiniPortable:text-[5px]">Articles</li>
+          </Link>
           <li>
             <ul onClick={handlerCliked} className="cursor-pointer">
               <li className="flex items-center MiniPortable:text-[5px]">
@@ -61,14 +66,16 @@ export default function Navigate() {
             {iconSearch}
           </button>
         </ul>
-        <div className="absolute border-t text-center bg-black text-white invisible Laptop:hidden Tablette:hidden mobil:visible mobil:relative MiniPortable:visible MiniPortable:relative MiniPortable:text-sm">
-          <button>Inscrivez-vous et economisez 10%</button>
-        </div>
+        <Link to={"/store.shopiline.cm/inscription"}>
+          <div className="absolute border-t text-center bg-black text-white invisible Laptop:hidden Tablette:hidden mobil:visible mobil:relative MiniPortable:visible MiniPortable:relative MiniPortable:text-sm mobil:bg-yellow-700 ">
+            <button>Inscrivez-vous et economisez 10%</button>
+          </div>
+        </Link>
       </nav>
 
       {/* ------------------------------------------------------------------Section Categorie------------------------------------------------------------------ */}
       {openCategories && (
-        <div className="-mt-8 relative flex justify-center p-4 ">
+        <div className="-mt-40 relative flex justify-center p-4 MiniPortable:-mt-8 mobil:-mt-8 Tablette:-mt-8 Laptop:-mt-8 ">
           <div className="fixed z-50 w-[50%]">
             {" "}
             <div className="w-[90%] absolute bg-white shadow-xl z-50 p-4 rounded-lg">
@@ -89,7 +96,6 @@ export default function Navigate() {
             </div>
           </div>
         </div>
-
       )}
       {openCategories && (
         <div className="fixed z-20 bg-black backdrop-blur-sm bg-opacity-40  max-w-[1700px] left-0 right-0 top-0  m-auto   h-full"></div>
@@ -133,14 +139,18 @@ const Categories = () => {
   return (
     <>
       {Categorie?.data.map((categories) => (
-        <div key={categories}>
-          <div className=" relative z-50 cursor-pointer border-t transition rounded-md hover:text-white hover:bg-black flex items-center justify-between mobil:hover:bg-white mobil:border-t-2 mobil:text-xs MiniPortable:text-xs MiniPortable:hover:bg-white mobil:hover:text-black MiniPortable:hover:text-black">
-            <button key={categories} className="p-4 text-left ">
-              {categories}
-            </button>
-            <span>{chevronR}</span>
-          </div>
-        </div>
+        <>
+          <Link to={"/Articles/shopiline"}>
+            <div key={categories}>
+              <div className=" relative z-50 cursor-pointer border-t transition rounded-md hover:text-white hover:bg-black flex items-center justify-between mobil:hover:bg-white mobil:border-t-2 mobil:text-xs MiniPortable:text-xs MiniPortable:hover:bg-white mobil:hover:text-black MiniPortable:hover:text-black">
+                <button key={categories} className="p-4 text-left ">
+                  {categories}
+                </button>
+                <span>{chevronR}</span>
+              </div>
+            </div>
+          </Link>
+        </>
       ))}
     </>
   );

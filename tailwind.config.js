@@ -1,9 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {},
     screens: {
@@ -13,12 +10,11 @@ export default {
       Laptop: { min: "762px", max: "1025px" },
       screenLarge: { min: "1026px" },
     },
-    fontFamily:{
-      Poppins:['Poppins', 'sans-serif'],
-      inter:['Inter','sans-serif'],
-      DancingScript:["Dancing Script","sans-serif"]
-    }
+    fontFamily: {
+      Poppins: ["Poppins", "sans-serif"],
+      inter: ["Inter", "sans-serif"],
+      DancingScript: ["Dancing Script", "sans-serif"],
+    },
   },
   plugins: [],
-}
-
+};

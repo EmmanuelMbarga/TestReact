@@ -59,7 +59,9 @@ const FooterConnexion = () => {
         <div className="w-52 MiniPortable:w-36 MiniPortable:gap-2">
           <h3>suivez-nous</h3>
           <div className="grid grid-cols-4 MiniPortable:grid-cols-3">
-            <div className="bg-red-500 h-10 w-10 rounded-full"></div>
+            <div className="bg-white h-10 w-10 rounded-full">
+              <img src="https://www.facebook.com" alt=""/>
+            </div>
             <div className="bg-red-500 h-10 w-10 rounded-full"></div>
             <div className="bg-red-500 h-10 w-10 rounded-full"></div>
             <div className="bg-red-500 h-10 w-10 rounded-full"></div>

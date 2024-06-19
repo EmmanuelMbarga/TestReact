@@ -21,11 +21,10 @@ export default function PannierElm() {
   const dispatch = useDispatch();
   //nb:une fois react-redux téléchargé, on va creer une variable qui va contenir le state de redux. aussi redux prend directement le state
   const Taillepanier = useSelector((state) => state.pannierAchat.items.length);
-  // console.log(Taillepanier);
+
 
   const handlerCliked = () => {
     dispatch(pannierCartActions.toggleCartVisible());
-    // dispatch(pannierCartActions.addItemToCart())
   };
 
   return (

@@ -26,7 +26,13 @@ export default function FormInscriptionValidate() {
       <label htmlFor="nom" className="labetStyle">
         votre Nom
       </label>
-      <input type="text" id="nom" {...register("nom")} className="inputStyle" />
+      <input
+        type="text"
+        id="nom"
+        name="nom"
+        {...register("nom")}
+        className="inputStyle"
+      />
       <br />
       {errors.nom && (
         <p className="errorStyle">
@@ -40,6 +46,7 @@ export default function FormInscriptionValidate() {
       <input
         type="text"
         id="prenom"
+        name="prenom"
         {...register("prenom")}
         className="inputStyle"
       />
@@ -57,6 +64,7 @@ export default function FormInscriptionValidate() {
       <input
         type="text"
         id="email"
+        name="email"
         {...register("email")}
         className="inputStyle"
       />
@@ -67,12 +75,13 @@ export default function FormInscriptionValidate() {
         </p>
       )}
 
-      <label htmlFor="mot de passe" className="labetStyle">
+      <label htmlFor="password" className="labetStyle">
         Mot de passe
       </label>
       <input
         type="password"
-        id="mot de passe"
+        id="password"
+        name="password"
         {...register("password")}
         className="inputStyle"
       />
