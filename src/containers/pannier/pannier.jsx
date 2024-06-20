@@ -5,7 +5,7 @@ const cart = (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="size-10 text-white"
+    className="size-9 text-white"
   >
     <path
       strokeLinecap="round"
@@ -28,10 +28,10 @@ export default function PannierElm() {
   };
 
   return (
-    <button onClick={handlerCliked} className="ml-2 p-2 bg-black">
+    <button onClick={handlerCliked} className="size-9 bg-black">
       <span>
         {cart}
-        <span className="border border-white absolute -mt-5 ml-2 text-xs bg-red-500 w-5 h-5 text-center text-white rounded-full mobil:ml-3 MiniPortable:ml-2 MiniPortable:-mt-3">
+        <span className={Taillepanier>0? "border border-white absolute -mt-5 ml-2 text-xs bg-red-500 w-5 h-5 text-center text-white rounded-full mobil:ml-0 MiniPortable:ml-2 MiniPortable:-mt-3" : "hidden"}>
           {Taillepanier}
         </span>
       </span>

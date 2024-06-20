@@ -37,7 +37,7 @@ const chevronR = (
   </svg>
 );
 
-export default function Navigate() {
+function Navigate() {
   const [openCategories, setOpenCategories] = useState(false);
 
   const handlerCliked = () => {
@@ -47,7 +47,7 @@ export default function Navigate() {
   return (
     <>
       <nav>
-        <ul className="flex items-center justify-evenly bg-black text-white mobil:text-xs MiniPortable:text-xs Tablette:bg-yellow-700">
+        <ul className="flex items-center justify-evenly bg-black text-white mobil:hidden MiniPortable:hidden ">
           <Link to={"/"}>
             <li className="MiniPortable:text-[5px]">Accueil</li>
           </Link>
@@ -57,11 +57,11 @@ export default function Navigate() {
           <li>
             <ul onClick={handlerCliked} className="cursor-pointer">
               <li className="flex items-center MiniPortable:text-[5px]">
-                categories<span onClick={handlerCliked}>{chevronR}</span>
+                Categories<span onClick={handlerCliked}>{chevronR}</span>
               </li>
             </ul>
           </li>
-          <li className="MiniPortable:text-[5px]">autres</li>
+          <li className="MiniPortable:text-[5px]">Mes Enregistrements</li>
           <button className=" absolute invisible Laptop:hidden Tablette:hidden ml-2 mobil:visible mobil:relative MiniPortable:visible MiniPortable:relative">
             {iconSearch}
           </button>
@@ -75,10 +75,10 @@ export default function Navigate() {
 
       {/* ------------------------------------------------------------------Section Categorie------------------------------------------------------------------ */}
       {openCategories && (
-        <div className="-mt-40 relative flex justify-center p-4 MiniPortable:-mt-8 mobil:-mt-8 Tablette:-mt-8 Laptop:-mt-8 ">
-          <div className="fixed z-50 w-[50%]">
+        <div className="-mt-40 relative flex justify-center p-4 MiniPortable:-mt-10 mobil:-mt-8 Tablette:-mt-8 Laptop:-mt-20 ">
+          <div className="fixed z-50 w-[50%] Tablette:w-[95%] mobil:w-[95%] MiniPortable:w-[95%] Laptop:w-[95%]">
             {" "}
-            <div className="w-[90%] absolute bg-white shadow-xl z-50 p-4 rounded-lg">
+            <div className="w-[90%] absolute bg-white shadow-xl z-50 p-4 rounded-lg Laptop:w-[100%] mobil:w-[100%] MiniPortable:w-[100%] Tablette:w-[100%]">
               <button
                 onClick={handlerCliked}
                 className="border w-8 h-8 flex justify-center items-center cursor-pointer bg-red-500 rounded-full"
@@ -103,7 +103,7 @@ export default function Navigate() {
     </>
   );
 }
-const Categories = () => {
+export const Categories = () => {
   const {
     data: Categorie,
     isLoading,
@@ -142,7 +142,7 @@ const Categories = () => {
         <>
           <Link to={"/Articles/shopiline"}>
             <div key={categories}>
-              <div className=" relative z-50 cursor-pointer border-t transition rounded-md hover:text-white hover:bg-black flex items-center justify-between mobil:hover:bg-white mobil:border-t-2 mobil:text-xs MiniPortable:text-xs MiniPortable:hover:bg-white mobil:hover:text-black MiniPortable:hover:text-black">
+              <div className=" relative z-50 cursor-pointer border-t transition rounded-md hover:text-white hover:bg-black flex items-center justify-between Tablette:rounded-none mobil:rounded-none MiniPortable:rounded-none mobil:hover:bg-white mobil:border-t-2 mobil:text-xs MiniPortable:text-xs MiniPortable:hover:bg-white mobil:hover:text-black MiniPortable:hover:text-black">
                 <button key={categories} className="p-4 text-left ">
                   {categories}
                 </button>
@@ -155,3 +155,5 @@ const Categories = () => {
     </>
   );
 };
+
+export default Navigate;

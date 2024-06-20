@@ -2,48 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    @apply p-0 m-0 box-border font-Poppins
+body {
+  @apply p-0 m-0 box-border font-Poppins;
 }
 
-.containerCardsPhone{
-    @apply m-auto mt-4 rounded-md hover:shadow-md cursor-pointer hover:shadow-yellow-800 mobil:shadow-md mobil:hover:shadow mobil:max-w-[300px] mobil:m-auto
+.containerCardsPhone {
+  @apply m-auto mt-4 rounded-md hover:shadow-md cursor-pointer hover:shadow-yellow-800 mobil:shadow-md mobil:hover:shadow mobil:max-w-[300px] mobil:m-auto;
 }
 
 /* -------------------------------------------style Formulaire Inscription------------------------------------------- */
-.labetStyle{
-    @apply text-xs font-bold font-inter
+.labetStyle {
+  @apply text-xs font-bold font-inter;
 }
-.inputStyle{
-    @apply border justify-center bg-white w-full Tablette:w-full my-1 px-4 text-base font-inter outline-offset-1 outline-yellow-400
+.inputStyle {
+  @apply border justify-center bg-white w-full Tablette:w-full my-1 px-4 text-base font-inter outline-offset-1 outline-yellow-400;
 }
-.errorStyle{
-    @apply text-xs text-red-500 font-inter
+.errorStyle {
+  @apply text-xs text-red-500 font-inter;
 }
 
 /* --------------------------------------------------style elements pannier-------------------------------------------------- */
-.element{
-    @apply capitalize font-inter text-sm font-bold Tablette:text-xs Laptop:text-xs
+.element {
+  @apply capitalize font-inter text-sm font-bold Tablette:text-xs Laptop:text-xs;
 }
-.souselement{
-    @apply font-light
+.souselement {
+  @apply font-light;
 }
 /* .thumbs.animated{
     @apply visible
 } */
 
-.activeDescription{
-    @apply w-4 h-4 border rounded-full shadow-lg bg-yellow-400 mobil:text-xs MiniPortable:text-xs
+.activeDescription {
+  @apply w-4 h-4 border rounded-full shadow-lg bg-yellow-400 mobil:text-xs MiniPortable:text-xs;
 }
-.desactiveDescription{
-    @apply w-4 h-4 border rounded-full shadow-lg bg-gray-300 Laptop:hover:bg-none mobil:text-xs MiniPortable:text-xs
+.desactiveDescription {
+  @apply w-4 h-4 border rounded-full shadow-lg bg-gray-300 Laptop:hover:bg-none mobil:text-xs MiniPortable:text-xs;
 }
-
 
 /* --------------------------------------------style composant de consultation du produit-------------------------------------------- */
-.DescriptionActive{
-    @apply mt-10 max-w-[800px] Tablette:flex mobil:mt-0 MiniPortable:mt-1
+.DescriptionActive {
+  @apply mt-10 max-w-[800px] Tablette:flex mobil:mt-0 MiniPortable:mt-1;
 }
-.DescriptionDesactive{
-    @apply mt-10 max-w-[800px] Tablette:flex mobil:mt-0 MiniPortable:mt-1
+.DescriptionDesactive {
+  @apply mt-10 max-w-[800px] Tablette:flex mobil:mt-0 MiniPortable:mt-1;
+}
+
+/* .openBurgerMenu {
+    @apply top-0 fixed h-[700px] w-full bg-black  left-0 translate-x-0 bg-opacity-75 backdrop-blur-sm MiniPortable:max-w-[212px] MiniPortable:fixed MiniPortable:z-50 mobil:max-w-[350px]  mobil:fixed mobil:z-50 Tablette:fixed Tablette:z-50;
+  }
+  .closeBurgerMenu {
+    @apply left-0 translate-x-[-500px] m-auto bg-blue-600  max-w-[1000px] max-h-[500vh] absolute bg-opacity-10 top-0 backdrop-blur-sm MiniPortable:max-w-[212px] MiniPortable:fixed MiniPortable:z-50 mobil:max-w-[350px] mobil:fixed mobil:z-50 Tablette:fixed Tablette:z-50;
+  } */
+
+.openBurgerMenu {
+  @apply px-2 w-full m-auto bg-black h-[500vh] left-0 translate-x-0 top-0 bg-opacity-75 backdrop-blur-sm fixed ;
+}
+.closeBurgerMenu {
+  @apply px-2 left-0 translate-x-[-100px] bg-black m-auto w-full max-h-[500vh] bg-opacity-10 top-0 backdrop-blur-sm fixed;
 }

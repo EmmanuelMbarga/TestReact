@@ -1,3 +1,10 @@
 .containerCardsPhone{
     transition: 0.4s;
 }
+.openBurgerMenu{
+    transition: 0.8s ease-in-out;
+  
+  }
+  .closeBurgerMenu{
+    transition: 0.8s ease-in-out;
+  }
