@@ -146,11 +146,11 @@ const NavSousMenu = (prop) => {
                 Categories<span onClick={handlerBtn}>{chevronR}</span>
               </li>
               {open ? (
+                ""
+              ) : (
                 <div className=" overflow-y-scroll h-[200px]">
                   <Categories />
                 </div>
-              ) : (
-                ""
               )}
             </ul>
           </li>
