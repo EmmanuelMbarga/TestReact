@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import PannierElm from "../../../containers/pannier/pannier";
 
 const LogoUser = (
@@ -37,7 +38,10 @@ const Buttons = () => {
   return (
     <>
       <div className="invisible Laptop:hidden Tablette:hidden mobil:visible MiniPortable:visible">
-        <button className="bg-black ml-2 p-2">{LogoUser}</button>
+        <Link to={"/store.shopiline.cm/account"}>
+          {" "}
+          <button className="bg-black ml-2 p-2">{LogoUser}</button>
+        </Link>
         <PannierElm />
       </div>
     </>

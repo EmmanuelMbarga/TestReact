@@ -22,7 +22,7 @@ export default function Carroussel() {
           interval={5000}
         >
           {Tops?.data.products.map((product) => (
-            <div key={product.id} className="w-96 h-96 m-auto z-0">
+            <div key={product.id} className="w-96 h-96 m-auto z-0 MiniPortable:w-40 MiniPortable:h-40">
               <img
                 key={product.id}
                 src={product.thumbnail}
