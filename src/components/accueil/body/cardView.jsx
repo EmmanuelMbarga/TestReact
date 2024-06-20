@@ -22,6 +22,8 @@ const cart = (
 );
 
 export default function CardView() {
+
+
   const dispacth = useDispatch();
   const Items = useSelector((state) => state.pannierAchat.items);
   const registerProduct = useRef();
@@ -45,6 +47,7 @@ export default function CardView() {
     console.log(data);
 
   }
+
 
 
 
