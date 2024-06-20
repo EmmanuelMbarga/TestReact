@@ -3,9 +3,9 @@ import { useForm } from "react-hook-form";
 import { joiResolver } from "@hookform/resolvers/joi";
 
 const ShemaUser = joi.object({
-  nom: joi.string().min(4).max(40).required(),
-  prenom: joi.string().min(4).max(20).required(),
-  email: joi.string().min(13).max(100).required().lowercase(),
+  firstName: joi.string().min(4).max(40).required(),
+  lastName: joi.string().min(4).max(20).required(),
+  email: joi.string().min(8).max(100).required().lowercase(),
   password: joi.string().min(6).max(40).required(),
 });
 
@@ -24,13 +24,13 @@ export default function FormInscriptionValidate() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="nom" className="labetStyle">
-        votre Nom
+        FirstName
       </label>
       <input
         type="text"
         id="nom"
         name="nom"
-        {...register("nom")}
+        {...register("firstName")}
         className="inputStyle"
       />
       <br />
@@ -41,13 +41,13 @@ export default function FormInscriptionValidate() {
       )}
 
       <label htmlFor="prenom" className="labetStyle">
-        votre Prenom
+      LastName
       </label>
       <input
         type="text"
         id="prenom"
         name="prenom"
-        {...register("prenom")}
+        {...register("lastName")}
         className="inputStyle"
       />
       <br />
@@ -59,7 +59,7 @@ export default function FormInscriptionValidate() {
 
       <label htmlFor="email" className="labetStyle">
         {" "}
-        adresse e-mail
+       e-mail
       </label>
       <input
         type="text"
@@ -76,7 +76,7 @@ export default function FormInscriptionValidate() {
       )}
 
       <label htmlFor="password" className="labetStyle">
-        Mot de passe
+        Password
       </label>
       <input
         type="password"

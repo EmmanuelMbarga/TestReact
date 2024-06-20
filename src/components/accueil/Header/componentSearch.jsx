@@ -56,7 +56,7 @@ const chevronR = (
 export default function ComponentSearch() {
   return (
     <>
-      <div className="mobil:hidden MiniPortable:hidden">
+      <div className="hidden mobil:hidden MiniPortable:hidden">
         <input
           id="searchBar"
           name="searchBar"

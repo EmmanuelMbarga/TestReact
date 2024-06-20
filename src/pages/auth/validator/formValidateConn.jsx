@@ -1,10 +1,10 @@
 import { joiResolver } from "@hookform/resolvers/joi";
 import joi from "joi";
 import { useForm } from "react-hook-form";
-
+import axios from "axios";
 const shemaConnexion = joi.object({
-  email: joi.string().min(13).max(100).required().lowercase(),
-  password: joi.string().min(6).max(40).required(),
+  username: joi.string().min(2).max(100).required(),
+  password: joi.string().min(2).max(40).required(),
 });
 
 export default function FormValidateConn() {
@@ -17,17 +17,29 @@ export default function FormValidateConn() {
 
   const onSubmit = (data) => {
     console.log(data); //ce console.log va vous permettre de voir comment les données sont enregistré lors de la connexion. Si nous avons procédé ainsi c'est parce que l'api mis à notre dispotion ne nous expose pas toutes les URL notament celles qui permettent de faire des requettes pour la connexion .
+    axios({
+      method:"post",
+      url:"https://dummyjson.com/user/login",
+      data:{
+        username:{...register("username")},
+        password:{...register("password")}
+      }
+    }).then((res)=>{
+      console.log(res);
+    }).catch((err)=>{
+      console.log(err);
+    })
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="email" className="labetStyle">
-        adresse e-mail
+       username
       </label>
       <input
         type="text"
         id="email"
         name="email"
-        {...register("email")}
+        {...register("username")}
         className="inputStyle"
       />
       <br />
@@ -35,7 +47,7 @@ export default function FormValidateConn() {
         <p className="errorStyle">email incorrect . reessayez svp</p>
       )}
       <label htmlFor="password" className="labetStyle">
-        Mot de passe
+        password
       </label>
       <input
         type="password"
