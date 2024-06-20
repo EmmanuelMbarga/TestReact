@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { pannierCartActions } from "../../../store/pannier-cart";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { useEffect, useRef } from "react";
+import axios from "axios";
 
 const cart = (
   <svg
@@ -35,15 +36,24 @@ export default function CardView() {
       </div>
     );
   }
-
- useEffect(()=>{
-  if (Items.length <= 0) {
-    registerProduct.current.style.visibility = "hidden";
-  } },[registerProduct])
-  
   const handlerCliked = () => {
     dispacth(pannierCartActions.toggleCartVisible());
   };
+  const handlerValidate=()=>{
+    // console.log('bonjour');
+    const data=axios.post('https://dummyjson.com/carts/add')
+    console.log(data);
+
+  }
+
+
+
+
+  useEffect(()=>{
+    if (Items.length <= 0) {
+      registerProduct.current.style.visibility = "hidden";
+    } },[registerProduct])
+    
   return (
     <>
       <div className="mt-28 flex justify-center p-4 mobil:mt-10 Tablette:mt-10 MiniPortable:-mt-20 ">
@@ -66,10 +76,11 @@ export default function CardView() {
                 <button
                   className="border ml-28 font-inter p-2 bg-black text-white mobil:text-xs mobil:p-1 mobil:-mt-2 MiniPortable:text-xs MiniPortable:p-1 MiniPortable:-mt-4 Laptop:ml-10 Tablette:ml-0 mobil:ml-0 MiniPortable:ml-0"
                   ref={registerProduct}
+                  onClick={handlerValidate}
                 >
-                  <Link to={"/"} aria-disabled>
+                  {/* <Link to={"/register/products"} aria-disabled> */}
                     enregistrer
-                  </Link>{" "}
+                  {/* </Link>{" "} */}
                 </button>{" "}
               </div>
             </div>
