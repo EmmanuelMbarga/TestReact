@@ -16,7 +16,7 @@ export default function FormValidateConn() {
   console.log(errors);
 
   const onSubmit = (data) => {
-    console.log(data); //ce console.log va vous permettre de voir comment les données sont enregistré lors de la connexion
+    console.log(data); //ce console.log va vous permettre de voir comment les données sont enregistré lors de la connexion. Si nous avons procédé ainsi c'est parce que l'api mis à notre dispotion ne nous expose pas toutes les URL notament celles qui permettent de faire des requettes pour la connexion .
   };
   return (
     <form onSubmit={handleSubmit(onSubmit)}>

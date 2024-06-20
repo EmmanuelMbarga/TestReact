@@ -18,7 +18,7 @@ export default function FormInscriptionValidate() {
   // console.log(errors);
 
   const onSubmit = (data) => {
-    console.log(data); //ce console.log va vous permettre de voir comment les données sont enregistré lors de l'inscription
+    console.log(data); //ce console.log va vous permettre de voir comment les données sont enregistré lors de l'inscription.  Si nous avons procédé ainsi c'est parce que l'api mis à notre dispotion ne nous expose pas toutes les URL notament celles qui permettent de faire des requettes pour l'inscription d'un utilisateur .
   };
 
   return (

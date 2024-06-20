@@ -1,4 +1,8 @@
 import { Link } from "react-router-dom";
+import logo1 from "/logos/Fichier 2.png";
+import logo2 from "/logos/Fichier 22.png";
+import logo3 from "/logos/gmail2.png";
+
 export default function FooterNavigation() {
   return (
     <>
@@ -50,7 +54,7 @@ const FooterConnexion = () => {
         </small>
         <br />
 
-        <Link to={"/store.shopiline.cm/inscription"}>
+        <Link to={"/store.shopiline.cm/inscription"} onScroll={true}>
           <button className="my-8 border p-6 w-fit mobil:p-2 MiniPortable:p-0 MiniPortable:text-xs">
             inscrivez-vous et economisez 10%
           </button>
@@ -58,13 +62,26 @@ const FooterConnexion = () => {
 
         <div className="w-52 MiniPortable:w-36 MiniPortable:gap-2">
           <h3>suivez-nous</h3>
-          <div className="grid grid-cols-4 MiniPortable:grid-cols-3">
-            <div className="bg-white h-10 w-10 rounded-full">
-              <img src="https://www.facebook.com" alt=""/>
-            </div>
-            <div className="bg-red-500 h-10 w-10 rounded-full"></div>
-            <div className="bg-red-500 h-10 w-10 rounded-full"></div>
-            <div className="bg-red-500 h-10 w-10 rounded-full"></div>
+          <div className="grid grid-cols-4 cursor-pointer MiniPortable:grid-cols-3">
+            <Link to={"https://wa.me/+237698397075"} target="_blanck">
+              <div>
+                <img src={logo1} alt="whatsapp" className=" h-10 w-10 rounded-full" />
+              </div>
+            </Link>
+            <Link to={"https://t.me/Emmanuelmbarg"}>
+              <div>
+                <img src={logo2} alt="telegramme" className=" h-10 w-10 rounded-full" />
+              </div>
+            </Link>
+            <Link to={"mailto:emmanuelmbarg@gmail.com"}>
+              <div>
+                <img
+                  src={logo3}
+                  alt="gmail"
+                  className="h-10 w-10 rounded-full object-cover"
+                />
+              </div>
+            </Link>
           </div>
         </div>
       </div>

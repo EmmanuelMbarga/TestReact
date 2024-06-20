@@ -5,6 +5,7 @@ import { InterfacePanier } from "../components/accueil/Header/interfacePanier";
 import HeaderPromote from "./../components/accueil/Header/sectionpromote";
 import HeaderComponent1 from "./../components/accueil/Header/headerComponent1";
 import Navigate from "../components/accueil/Header/navigate";
+import FooterApp from "../components/accueil/footer/footer";
 export const ArticlesPage = () => {
   return (
     <>
@@ -15,6 +16,9 @@ export const ArticlesPage = () => {
         <Navigate />
       </header>
       <Articlebody />
+      <div className="mt-40">
+      <FooterApp/>
+      </div>
     </>
   );
 };
