@@ -7,7 +7,7 @@ body{
 }
 
 .containerCardsPhone{
-    @apply m-auto mt-4 rounded-md hover:shadow-md cursor-pointer hover:shadow-yellow-800 mobil:shadow-md mobil:hover:shadow
+    @apply m-auto mt-4 rounded-md hover:shadow-md cursor-pointer hover:shadow-yellow-800 mobil:shadow-md mobil:hover:shadow mobil:max-w-[300px] mobil:m-auto
 }
 
 /* -------------------------------------------style Formulaire Inscription------------------------------------------- */

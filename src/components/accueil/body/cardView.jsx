@@ -60,7 +60,7 @@ export default function CardView() {
   return (
     <>
       <div className="mt-28 flex justify-center p-4 mobil:mt-10 Tablette:mt-10 MiniPortable:-mt-20 ">
-        <div className="fixed z-50 w-[50%]">
+        <div className="fixed z-50 w-[50%] mobil:w-[80%] MiniPortable:w-[90%]">
           {" "}
           <div className="w-full bg-white shadow-xl z-50 p-4 rounded-lg">
             <button
@@ -71,7 +71,7 @@ export default function CardView() {
             </button>
 
             <div className="flex justify-around">
-              <div className="grid grid-cols-2 items-center Tablette:grid-cols-1 mobil:grid-cols-1 MiniPortable:grid-cols-1">
+              <div className="grid grid-cols-2 items-center Tablette:grid-cols-1 mobil:grid-cols-2 MiniPortable:grid-cols-2">
                 <div className="flex font-bold text-center MiniPortable:py-3  text-2xl p-2 MiniPortable:text-xs mobil:py-2 mobil:my-4 MiniPortable:my-4 ">
                   <span>{cart}</span>
                   <span>({Items.length})</span>
