@@ -15,11 +15,11 @@ export default function Carroussel() {
         {" "}
         <Carousel
           autoPlay={true}
-          transitionTime={3000}
+          transitionTime={2000}
           showStatus={false}
           showThumbs={false}
           infiniteLoop={true}
-          interval={7000}
+          interval={5000}
         >
           {Tops?.data.products.map((product) => (
             <div key={product.id} className="w-96 h-96 m-auto z-0">

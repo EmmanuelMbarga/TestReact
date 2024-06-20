@@ -10,12 +10,12 @@ export const ComponentOption = () => {
 
   return (
     <>
-      <div className="sticky top-10 items-center gap-2  cursor-pointer Laptop:w-40 Tablette:w-36 mobil:flex mobil:overflow-y-scroll mobil:bg-white mobil:shadow-md MiniPortable:flex MiniPortable:overflow-y-scroll MiniPortable:bg-white MiniPortable:relative MiniPortable:top-0 ">
+      <div className="sticky top-2 items-center gap-2  cursor-pointer Laptop:w-40 Tablette:w-36 mobil:flex mobil:overflow-y-scroll mobil:bg-white mobil:shadow-md MiniPortable:flex MiniPortable:overflow-y-scroll MiniPortable:bg-white MiniPortable:relative MiniPortable:top-0 ">
         <h3 className="uppercase text-left font-bold border-b MiniPortable:hidden">toutes les Categories</h3>
-        {Allcategories?.data.map((allCategori) => (
-          <>
-            <BtnCategory AllCategori={allCategori} Key={allCategori.id} />
-          </>
+        {Allcategories?.data.map((allCategori,index) => (
+          <div key={allCategori.id || index} >
+            <BtnCategory AllCategori={allCategori}/>
+          </div>
         ))}
       </div>
     </>

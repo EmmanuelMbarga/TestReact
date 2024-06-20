@@ -59,19 +59,19 @@ export default function CardView() {
   );
 }
 
-const CartItems = ({ item }) => {
+const CartItems = (prop) => {
   const dispatch=useDispatch()
   
   const handlerRemoveItems=()=>{
-    dispatch(pannierCartActions.removeItemToCart(item.id))
+    dispatch(pannierCartActions.removeItemToCart(prop.item.id))
   }
   const handlerIncrementbtnclicked=()=>{
-    dispatch(pannierCartActions.incrementQuantity(item.id))
+    dispatch(pannierCartActions.incrementQuantity(prop.item.id))
 
   }
 
   const handlerdecrementbtncliked=()=>{
-    dispatch(pannierCartActions.decrementQuandity(item.id))
+    dispatch(pannierCartActions.decrementQuandity(prop.item.id))
   }
 
   return (
@@ -80,22 +80,22 @@ const CartItems = ({ item }) => {
         <div className="bg-white flex justify-around gap-4 border-b Tablette:gap-2 mobil:flex-col Tablette:items-end MiniPortable:flex-col ">
           <div className="flex items-center gap-4 Tablette:gap-2 mobil:flex-col MiniPortable:flex-col">
             <img
-              src={item.image}
-              alt={item.title}
+              src={prop.item.image}
+              alt={prop.item.title}
               className="w-20 h-20 object-cover Tablette:w-10 Tablette:h-10"
             />
             <div className="p-2">
               <p className="element">
-                Nom: <span className="souselement">{item.title}</span>
+                Nom: <span className="souselement">{prop.item.title}</span>
               </p>
               <p className="element">
                 prix:{" "}
                 <span className="souselement">
-                  {item.quantity} x {item.price}
+                  {prop.item.quantity} x {prop.item.price}
                 </span>
               </p>
               <p className="element">
-                quantité: <span className="souselement">{item.quantity}</span>
+                quantité: <span className="souselement">{prop.item.quantity}</span>
               </p>
               <button className="px-1 text-red-500 rounded hover:text-white hover:bg-red-500 transition" onClick={handlerRemoveItems}>
                 <small>retirer</small>
@@ -105,14 +105,14 @@ const CartItems = ({ item }) => {
           <div className="mt-14 mobil:mt-0 MiniPortable:mt-0">
             <div className="mobil:text-center MiniPortable:text-center">
               <span className="cursor-pointer" onClick={handlerdecrementbtncliked}>-{" "}</span>
-              <span>{item.quantity}</span>
+              <span>{prop.item.quantity}</span>
               <span className="cursor-pointer" onClick={handlerIncrementbtnclicked}>{" "}+</span>
             </div>
             <div className="flex items-center gap-2 Tablette:flex-col mobil:flex-col MiniPortable:flex-col">
               <p className="capitalize font-inter font-bold Laptop:text-xs Tablette:text-xs ">
                 total:{" "}
                 <span className=" font-light text-xs">
-                  {item.price * item.quantity}
+                  {prop.item.price * prop.item.quantity}
                 </span>
               </p>
               <button className=" text-green-500 hover:bg-green-500 transition hover:text-white rounded font-inter p-1">
