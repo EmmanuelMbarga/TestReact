@@ -22,6 +22,8 @@ export const Articlebody = () => {
     enabled: !!lienCategori,
   });
 
+  const truncate = (str, lenght = 20) => str.substr(0, lenght) + "...";
+
   if (isLoading) {
     return (
       <img
@@ -38,25 +40,26 @@ export const Articlebody = () => {
       </p>
     );
   }
-
+ 
   const Allcategories = Articles?.data.products;
   const TableAllcategoriesContainer = [];
   Allcategories.forEach((Allcategori) => {
     TableAllcategoriesContainer.push(
       <div key={Allcategori.id}>
         <ComponentArticle
-        title={Allcategori.title}
-        description={Allcategori.description}
-        category={Allcategori.category}
-        price={Allcategori.price}
-        thumbnail={Allcategori.thumbnail}
-        DispatchCategori={Allcategori}
-        stockStatus={Allcategori.availabilityStatus}
-        stockQuantity={Allcategori.stock}
-        secondImg={Allcategori.images}
-        typeElement={Allcategori.warrantyInformation}
-        productcode={Allcategori.sku}
-      />
+          title={Allcategori.title}
+          Shortdescription={truncate(Allcategori.description,80)}
+          Largedescription={Allcategori.description}
+          category={Allcategori.category}
+          price={Allcategori.price}
+          thumbnail={Allcategori.thumbnail}
+          DispatchCategori={Allcategori}
+          stockStatus={Allcategori.availabilityStatus}
+          stockQuantity={Allcategori.stock}
+          secondImg={Allcategori.images}
+          typeElement={Allcategori.warrantyInformation}
+          productcode={Allcategori.sku}
+        />
       </div>
     );
   });

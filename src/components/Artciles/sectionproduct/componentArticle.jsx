@@ -22,7 +22,7 @@ export const ComponentArticle = (prop) => {
           </div>
           <div>
             <h3>{prop.title}</h3>
-            <p className="text-xs my-4 font-inter">{prop.description}</p>
+            <p className="text-xs my-4 font-inter">{prop.Shortdescription}</p>
             <div className="flex justify-between mobil:flex-col">
               <span className="mr-2 mobil:mb-3">
                 price:
@@ -50,7 +50,7 @@ export const ComponentArticle = (prop) => {
                   <div key={prop.Key}>
                     <ProductCategoryPage
                       btnClicked={handlerPageCategoryCliked}
-                      Description={prop.description}
+                      Description={prop.Largedescription}
                       title={prop.title}
                       thumbnail={prop.thumbnail}
                       price={prop.price}

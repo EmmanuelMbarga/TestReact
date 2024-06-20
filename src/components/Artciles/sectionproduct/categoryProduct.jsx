@@ -18,17 +18,17 @@ const ProductCategoryPage = (prop) => {
 
   return (
     <>
-      <div className="top-8 absolute flex justify-center p-4 Laptop:top-20 Tablette:top-0 mobil:-top-2 MiniPortable:top-0">
-        <div className="fixed z-50 w-[90%] right-0 mobil:h-[100%]">
+      <div className="top-8 absolute flex justify-center p-4 screenLarge:top-0 Laptop:top-0 Tablette:top-0 mobil:-top-2 MiniPortable:top-0">
+        <div className="fixed z-50 w-[80%] right-0 mobil:h-[100%]">
           {" "}
-          <div className="w-[90%] max-h-[1400px] absolute bg-white shadow-xl z-50 p-4 rounded-lg Tablette:max-h-[1500px]">
+          <div className="w-[80%] max-h-[1400px] absolute bg-white shadow-xl z-50 p-4 rounded-lg Tablette:max-h-[1500px]">
             <button
               className="border w-8 h-8 flex justify-center items-center cursor-pointer bg-red-500 rounded-full"
               onClick={prop.btnClicked}
             >
               x
             </button>
-            <h2 className="text-justify px-10 mt-4 uppercase text-2xl pb-10 MiniPortable:text-xs MiniPortable:py-5 mobil:py-6 Tablette:px-2 Tablette:pb-1 Tablette:text-left mobil:px-2 mobil:-mt-4 mobil:text-lg mobil:pb-0 MiniPortable:px-1 MiniPortable:-mt-2 MiniPortable:text-left MiniPortable:pb-2 ">
+            <h2 className="text-justify px-10 mt-4 uppercase text-2xl pb-10 screenLarge:text-xl MiniPortable:text-xs MiniPortable:py-5 mobil:py-6 Tablette:px-2 Tablette:pb-1 Tablette:text-left mobil:px-2 mobil:-mt-4 mobil:text-lg mobil:pb-0 MiniPortable:px-1 MiniPortable:-mt-2 MiniPortable:text-left MiniPortable:pb-2 ">
               product: <span className="font-inter">{prop.title}</span>
             </h2>
             <div className="grid grid-cols-2 Tablette:grid-cols-1 mobil:grid-cols-1 MiniPortable:grid-cols-1 ">
@@ -44,11 +44,11 @@ const ProductCategoryPage = (prop) => {
                   {tableauSlider}
                 </Carousel>
               </div>
-              <div className=" w-full border-l-4 border-yellow-500 pl-14 max-w-[500px]  Laptop:-mt-3 Laptop:pl-0 Tablette:border-none Tablette:pl-0 mobil:pl-0 mobil:border-none MiniPortable:border-none MiniPortable:pl-0 ">
-                <h2 className="text-left text-xl pb-10 MiniPortable:text-xs MiniPortable:py-1 Tablette:pb-2 mobil:py-6 Laptop:px-4 mobil:pb-1 mobil:text-sm  ">
+              <div className=" w-full border-l-4 border-yellow-500 pl-14 max-w-[500px] screenLarge:pl-0   Laptop:-mt-3 Laptop:pl-0 Tablette:border-none Tablette:pl-0 mobil:pl-0 mobil:border-none MiniPortable:border-none MiniPortable:pl-0 ">
+                <h2 className="text-left text-xl pb-10 screenLarge:pb-4 screenLarge:px-2 MiniPortable:text-xs MiniPortable:py-1 Tablette:pb-2 mobil:py-6 Laptop:px-4 mobil:pb-1 mobil:text-sm  ">
                   {prop.title}
                 </h2>
-                <div className="Laptop:px-4">
+                <div className="Laptop:px-4 screenLarge:px-2">
                   <p className="font-inter text-base Laptop:text-sm text-left text-yellow-500 mobil:text-xs MiniPortable:text-xs ">
                     Veuillez passer la commande pour connaître les options de
                     livraison et les délais de transit supplémentaires.
@@ -101,20 +101,22 @@ const ProductCategoryPage = (prop) => {
                     Ajouters
                   </button>
                 </div>
-                <div className="Laptop:px-4 ">
-                  <div className="flex justify-between items-center my-4 mobil:my-0 MiniPortable:my-2">
+                <div className="Laptop:px-4 screenLarge:px-2 ">
+                  <div className="flex justify-between items-center justify-items-center my-4 mobil:my-0 MiniPortable:my-2">
                     <p className="uppercase text-sm font-inter Tablette:sm mobil:text-xs MiniPortable:text-xs">
                       description
                     </p>
                     <button
                       onClick={handlerBtnclicked}
-                      className="mobil:text-xs MiniPortable:text-xs"
-                    >
-                      x
-                    </button>
+                      className={
+                        btnclicked
+                          ? "activeDescription"
+                          : "desactiveDescription"
+                      }
+                    ></button>
                   </div>
                   {btnclicked && (
-                    <PageSousInfos description={prop.Description} />
+                    <PageSousInfos description={prop.Description} ButtonClicked={btnclicked} />
                   )}
                 </div>
               </div>
@@ -140,9 +142,10 @@ const SliderElementImage = (prop) => {
 
 const PageSousInfos = (prop) => {
   const DescriptionArticle = prop.description;
+  const textDescription=prop.ButtonClicked
   return (
-    <div className=" mt-10 max-w-[800px] Tablette:flex mobil:mt-0 MiniPortable:mt-1">
-      <p className="text-sm font-inter text-center Tablette:text-left mobil:text-xs mobil:text-left MiniPortable:text-left MiniPortable:text-xs">
+    <div className={textDescription ? "DescriptionActive" : "DescriptionDesactive"}>
+      <p className="text-sm text-left font-inter  Tablette:text-left mobil:text-xs mobil:text-left MiniPortable:text-left MiniPortable:text-xs">
         {DescriptionArticle}
       </p>
     </div>

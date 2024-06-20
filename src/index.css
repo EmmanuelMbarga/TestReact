@@ -31,3 +31,19 @@ body{
 /* .thumbs.animated{
     @apply visible
 } */
+
+.activeDescription{
+    @apply w-4 h-4 border rounded-full shadow-lg bg-yellow-400 mobil:text-xs MiniPortable:text-xs
+}
+.desactiveDescription{
+    @apply w-4 h-4 border rounded-full shadow-lg bg-gray-300 Laptop:hover:bg-none mobil:text-xs MiniPortable:text-xs
+}
+/* .ComponenttextActiveDescription{
+    @apply mt-10 max-w-[800px] Tablette:flex mobil:mt-0 MiniPortable:mt-1
+} */
+.DescriptionActive{
+    @apply mt-10 max-w-[800px] Tablette:flex mobil:mt-0 MiniPortable:mt-1
+}
+.DescriptionDesactive{
+    @apply mt-10 max-w-[800px] Tablette:flex mobil:mt-0 MiniPortable:mt-1
+}

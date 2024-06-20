@@ -1,3 +1,17 @@
 .containerCardsPhone{
     transition: 0.4s;
 }
+
+/* .DescriptionActive{
+    transform:translatex(0px);
+    position: absolute;
+    opacity: 1;
+    transition:0.8s;
+}
+.DescriptionDesactive{
+    transform: translatex(-200px);
+    opacity: 1;
+    transition:0.8s;
+    position: absolute;
+
+} */

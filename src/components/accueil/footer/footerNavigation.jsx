@@ -54,7 +54,7 @@ const FooterConnexion = () => {
         </small>
         <br />
 
-        <Link to={"/store.shopiline.cm/inscription"} onScroll={true}>
+        <Link to={"/store.shopiline.cm/inscription"}>
           <button className="my-8 border p-6 w-fit mobil:p-2 MiniPortable:p-0 MiniPortable:text-xs">
             inscrivez-vous et economisez 10%
           </button>
@@ -65,15 +65,23 @@ const FooterConnexion = () => {
           <div className="grid grid-cols-4 cursor-pointer MiniPortable:grid-cols-3">
             <Link to={"https://wa.me/+237698397075"} target="_blanck">
               <div>
-                <img src={logo1} alt="whatsapp" className=" h-10 w-10 rounded-full" />
+                <img
+                  src={logo1}
+                  alt="whatsapp"
+                  className=" h-10 w-10 rounded-full"
+                />
               </div>
             </Link>
-            <Link to={"https://t.me/Emmanuelmbarg"}>
+            <Link to={"https://t.me/Emmanuelmbarg"} target="_blanck">
               <div>
-                <img src={logo2} alt="telegramme" className=" h-10 w-10 rounded-full" />
+                <img
+                  src={logo2}
+                  alt="telegramme"
+                  className=" h-10 w-10 rounded-full"
+                />
               </div>
             </Link>
-            <Link to={"mailto:emmanuelmbarg@gmail.com"}>
+            <Link to={"mailto:emmanuelmbarg@gmail.com"} target="_blanck">
               <div>
                 <img
                   src={logo3}
